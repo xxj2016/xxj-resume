@@ -1,0 +1,233 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en" ng-app="myApp"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en" ng-app="myApp"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en" ng-app="myApp"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en" ng-app="myApp">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>许徐杰 -- 个人简历</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width" />
+    <link type="text/css" href="./bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link type="text/css" href="./font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link type="text/css" href="./css/my.css" rel="stylesheet">
+    <script src="./js/angular.min.js"></script>
+    <script src="./js/indexCtrl.js"></script>
+</head>
+
+<body>
+    <div class="container" ng-controller="IndexCtrl">
+        <div class="row">
+            <div class="col-sm-4 col-md-3 left-aside">
+                <div class="user-logo">
+                    <img ng-src="{{ui.userInfo.logo}}" class="user-img">
+                </div>
+                <div class="user-name">
+                    {{ui.userInfo.name}}
+                </div>
+                <div class="job-box">
+                    求职意向：{{ui.userInfo.job}}
+                </div>
+                <div class="info-item">
+                    <div class="icon-box">
+                        <i class="fa fa-user-secret"></i>&nbsp;
+                    </div>
+                    <div class="inner-box">
+                        民族：{{ui.userInfo.nation}}
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="icon-box">
+                        <i class="fa fa-user-secret"></i>&nbsp;
+                    </div>
+                    <div class="inner-box">
+                        政治面貌：{{ui.userInfo.status}}
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="icon-box">
+                        <i class="fa fa-calendar-o"></i>&nbsp;
+                    </div>
+                    <div class="inner-box">
+                        生日：{{ui.userInfo.birthday}}
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="icon-box">
+                        <i class="fa fa-map"></i>&nbsp;
+                    </div>
+                    <div class="inner-box">
+                        籍贯：{{ui.userInfo.birthplace}}
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="icon-box">
+                        <i class="fa fa-map-marker"></i>&nbsp;
+                    </div>
+                    <div class="inner-box">
+                        现居：{{ui.userInfo.nowLivesIn}}
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="icon-box">
+                        <i class="fa fa-phone"></i>&nbsp;
+                    </div>
+                    <div class="inner-box">
+                        电话：{{ui.userInfo.phone}}
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="icon-box">
+                        <i class="fa fa-envelope"></i>&nbsp;
+                    </div>
+                    <div class="inner-box">
+                        邮箱：{{ui.userInfo.email}}
+                    </div>
+                </div>
+                <div class="wechat-qrcode-box">
+                    <img ng-src="{{ui.userInfo.qrcode}}">
+                </div>
+            </div>
+            <div class="col-sm-8 col-md-9">
+                <div class="content-box">
+                    <div class="type-box">
+                        <i class="fa fa-pencil-square-o"></i>
+                        &nbsp;&nbsp;自我评价
+                    </div>
+                    <div class="inner-box">
+                        &nbsp;&nbsp;&nbsp;&nbsp;{{ui.selfEvaluation.content}}
+                    </div>
+                </div>
+
+                <div class="content-box">
+                    <div class="type-box">
+                        <i class="fa fa-cog"></i>
+                        &nbsp;&nbsp;专业技能
+                    </div>
+                    <div class="inner-box">
+                        <dl class="dl-horizontal" ng-repeat="val in ui.skill">
+                            <dt>{{val.name}}：</dt>
+                            <dd>{{val.content}}</dd>
+                        </dl>
+                    </div>
+                </div>
+
+                <div class="content-box">
+                    <div class="type-box">
+                        <i class="fa fa-briefcase"></i>
+                        &nbsp;&nbsp;工作经验
+                    </div>
+                    <div class="inner-box">
+                        <div class="work-item" ng-repeat="work in ui.works">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <h4 class="me-text">{{work.date}}</h4>
+                                </div>
+                                <div class="col-md-4">
+                                    <h4 class="me-text">{{work.company}}</h4>
+                                </div>
+                                <div class="col-md-4">
+                                    <h4 class="me-text">{{work.job}}</h4>
+                                </div>
+                            </div>
+                            <h4 class="me-text">
+                                <i class="fa fa-square"></i>
+                                工作描述：
+                            </h4>
+                            <p ng-repeat="val in work.workDescription">
+                                {{val}}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-box">
+                    <div class="type-box">
+                        <i class="fa fa-connectdevelop"></i>
+                        &nbsp;&nbsp;项目经验
+                    </div>
+                    <div class="inner-box">
+                        <div ng-repeat="project in ui.projects">
+                            <h4 class="project-name">{{project.name}}
+                                <small>({{project.date}})</small>
+                            </h4>
+                            <dl class="dl-horizontal">
+                                <dt>项目职务：</dt>
+                                <dd>{{project.post}}</dd>
+                            </dl>
+                            <dl class="dl-horizontal">
+                                <dt>所在公司：</dt>
+                                <dd>{{project.company}}</dd>
+                            </dl>
+                            <dl class="dl-horizontal">
+                                <dt>项目描述：</dt>
+                                <dd>{{project.description}}</dd>
+                            </dl>
+                            <dl class="dl-horizontal">
+                                <dt>项目职责：</dt>
+                                <dd>
+                                    <p ng-repeat="val in project.dutys">{{val}}</p>
+                                </dd>
+                            </dl>
+                            <dl class="dl-horizontal">
+                                <dt>项目业绩：</dt>
+                                <dd>{{project.performance}}</dd>
+                            </dl>
+                        </div>
+                        <h4 class="me-text">
+                            <i class="fa fa-square"></i>
+                            更多项目经验：
+                        </h4>
+                        <p ng-repeat="val in ui.moreProjects">
+                            {{val}}
+                        </p>
+                    </div>
+                </div>
+
+                <div class="content-box">
+                    <div class="type-box">
+                        <i class="fa fa-graduation-cap"></i>
+                        &nbsp;&nbsp;教育背景
+                    </div>
+                    <div class="inner-box">
+                        <div ng-repeat="val in ui.education">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <h4 class="me-text">{{val.date}}</h4>
+                                </div>
+                                <div class="col-md-4">
+                                    <h4 class="me-text">{{val.school}}</h4>
+                                </div>
+                                <div class="col-md-4">
+                                    <h4 class="me-text">{{val.profession}}</h4>
+                                </div>
+                            </div>
+                            <h4 class="me-text">
+                                <i class="fa fa-square"></i>
+                                主修课程：
+                            </h4>
+                            <p>
+                                {{val.subject}}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-box margin-bottom-lg">
+                    <div class="type-box">
+                        <i class="fa fa-gratipay"></i>
+                        &nbsp;&nbsp;兴趣爱好
+                    </div>
+                    <div class="inner-box">
+                        {{ui.hobby}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
