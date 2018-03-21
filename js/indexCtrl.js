@@ -3,7 +3,7 @@ controller('IndexCtrl', function ($scope) {
 	$scope.ui = {
 		userInfo: {
 			name: '许徐杰', // 姓名
-			logo: './img/user.jpg', // 头像
+			logo: './img/resume.jpg', // 头像
 			job: '前端工程师', // 求职意向
 			nation: '汉族', // 民族
 			status: '中共党员', // 政治面貌
