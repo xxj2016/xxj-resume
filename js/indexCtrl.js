@@ -73,13 +73,13 @@ controller('IndexCtrl', function ($scope) {
 				date: '2016/6 - 2016/11',
 				post: 'Web前端开发',
 				company: '珠海市思捷先行信息技术有限公司',
-				description: '电商管理ERP系统属于应用于香港HKMOMALL电商网站，进行库存控制、调动价格、查看销售报表、资产查阅的管理系统。产品包含网页版本和webApp(Leader)版本，都已被公司应用。其含有仓储管理、销售管理、财务管理、销售管理、用户管理等多个功能模块。',
+				description: '电商管理ERP系统属于应用于香港 港澳滙电商网站，进行库存控制、调动价格、查看销售报表、资产查阅的管理系统。产品包含网页版本和webApp(Leader)版本，都已被公司应用。其含有仓储管理、销售管理、财务管理、销售管理、用户管理等多个功能模块。',
 				dutys: [
 					'1、参与产品的需求分析和功能设计过程。',
 					'2、项目管理使用Git+Sourcetree进行版本管理。前端页面主要使用Bootstrap、Angular.js; webApp使用ionic1技术。 ',
 					'3、根据产品设计原型开发完成前端核心代码，并和后端开发工程师进行协作实现产品的页面交互和数据逻辑展示。'
 				],
-				performance: '目前使用有 HKMOMALL'
+				performance: '目前使用有 港澳滙'
 			}
 		],
 		moreProjects: [
